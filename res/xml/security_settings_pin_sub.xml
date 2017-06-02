@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/settings_label"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+  xmlns:mk="http://schemas.android.com/apk/res/mokee.platform">
+    <com.android.settings.TimeoutListPreference android:entries="@array/lock_after_timeout_entries" android:title="@string/lock_after_timeout" android:key="lock_after_timeout" android:summary="@string/lock_after_timeout_summary" android:entryValues="@array/lock_after_timeout_values" />
+    <SwitchPreference android:title="@string/lockpattern_settings_enable_power_button_instantly_locks" android:key="power_button_instantly_locks" />
+    <SwitchPreference android:persistent="false" android:title="@string/lock_directly_show_pin" android:key="directly_show_lock" />
+    <com.android.settings.SingleLineSummaryPreference android:title="@string/owner_info_settings_title" android:key="owner_info_settings" android:summary="@string/owner_info_settings_summary" />
+    <mokee.preference.MKSystemSettingSwitchPreference android:title="@string/unlock_scramble_pin_layout_title" android:key="lockscreen_scramble_pin_layout" android:summary="@string/unlock_scramble_pin_layout_summary" />
+    <PreferenceScreen android:title="@string/lockscreen_targets_message">
+        <intent android:targetPackage="com.android.systemui" android:targetClass="com.android.systemui.cm.LockscreenShortcutsActivity" />
+    </PreferenceScreen>
+    <mokee.preference.MKSecureSettingSwitchPreference android:title="@string/lockscreen_visualizer_title" android:key="lockscreen_visualizer" android:defaultValue="true" />
+    <mokee.preference.MKSecureSettingSwitchPreference android:title="@string/lockscreen_weather_enabled_title" android:key="lock_screen_weather_enabled" android:defaultValue="false" />
+    <mokee.preference.MKSecureSettingSwitchPreference android:title="@string/lockscreen_blur_enabled_title" android:key="lock_screen_blur_enabled" mk:requiresConfig="@android:bool/config_uiBlurEnabled" />
+</PreferenceScreen>
